@@ -1,1 +1,40 @@
-{     "devDependencies": {         "express-status-monitor": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-express-status-monitor",     "homepage": "https://github.com/npmtest/node-npmtest-express-status-monitor",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-express-status-monitor.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [express-status-monitor (v0.1.9)](https://github.com/RafalWilinski/express-status-monitor#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-express-status-monitor.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-express-status-monitor) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-express-status-monitor.svg)](https://travis-ci.org/npmtest/node-npmtest-express-status-monitor)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "express-status-monitor": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-express-status-monitor",
+    "keywords": [
+        "coverage",
+        "test",
+        "express-status-monitor"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_express_status_monitor.js",
+    "name": "npmtest-express-status-monitor",
+    "nameAlias": "npmtest_express_status_monitor",
+    "nameOriginal": "npmtest-express-status-monitor",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-express-status-monitor.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
